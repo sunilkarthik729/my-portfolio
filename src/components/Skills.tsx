@@ -1,17 +1,16 @@
 import { motion } from "framer-motion";
-import React, { useRef, useEffect, useState } from "react";
-import { FaReact, FaGitAlt, FaCss3Alt, FaHtml5, FaJava, FaDatabase } from "react-icons/fa";
+import React, { useRef, useEffect, useState, type ReactElement } from "react";
+import { FaReact, FaGitAlt, FaCss3Alt, FaHtml5, FaJava } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiVite, SiMysql } from "react-icons/si";
 
 type Skill = {
   name: string;
   level: number;
-  icon: JSX.Element;
+  icon: ReactElement; 
   category: "Frontend" | "Backend" | "Tools";
 };
 
 const skills: Skill[] = [
-  
   { name: "React", level: 90, icon: <FaReact className="text-[#61DBFB]" />, category: "Frontend" },
   { name: "TypeScript", level: 85, icon: <SiTypescript className="text-[#3178c6]" />, category: "Frontend" },
   { name: "Tailwind CSS", level: 80, icon: <SiTailwindcss className="text-[#38BDF8]" />, category: "Frontend" },
@@ -19,27 +18,33 @@ const skills: Skill[] = [
   { name: "HTML5", level: 95, icon: <FaHtml5 className="text-orange-500" />, category: "Frontend" },
   { name: "CSS3", level: 90, icon: <FaCss3Alt className="text-blue-500" />, category: "Frontend" },
 
-  
   { name: "Java", level: 70, icon: <FaJava className="text-red-500" />, category: "Backend" },
   { name: "MySQL", level: 65, icon: <SiMysql className="text-[#00758F]" />, category: "Backend" },
 
-  
   { name: "Git", level: 85, icon: <FaGitAlt className="text-orange-400" />, category: "Tools" },
 ];
 
-const categories = ["Frontend", "Backend", "Tools"];
+const categories = ["Frontend", "Backend", "Tools"] as const;
 
 const Skills: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
-  useEffect( () => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && setVisible(true)),
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setVisible(true);
+        }),
       { threshold: 0.3 }
     );
+
     if (ref.current) observer.observe(ref.current);
-    return () => ref.current && observer.unobserve(ref.current);
+
+    // ✅ cleanup should return a function (not null)
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
   }, []);
 
   return (
@@ -72,7 +77,9 @@ const Skills: React.FC = () => {
                     <div className="flex items-center gap-3 mb-3">
                       {skill.icon}
                       <span className="font-medium">{skill.name}</span>
-                      <span className="ml-auto text-gray-400">{visible ? `${skill.level}%` : "0%"}</span>
+                      <span className="ml-auto text-gray-400">
+                        {visible ? `${skill.level}%` : "0%"}
+                      </span>
                     </div>
                     <div className="w-full bg-gray-800 rounded-full h-2">
                       <div
