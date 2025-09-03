@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         {/* Social Icons */}
         <div className="flex space-x-6">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/sunilkarthik729/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-[#1DA1F2] transition-transform transform hover:scale-110"
@@ -25,7 +25,9 @@ const Footer: React.FC = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/
+sunil-kumar-147046214
+"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-[#1DA1F2] transition-transform transform hover:scale-110"
@@ -33,7 +35,7 @@ const Footer: React.FC = () => {
             <FaLinkedin size={24} />
           </a>
           <a
-            href="https://instagram.com/yourusername"
+            href="https://www.instagram.com/_.sunil07._/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-[#1DA1F2] transition-transform transform hover:scale-110"
@@ -41,13 +43,13 @@ const Footer: React.FC = () => {
             <FaInstagram size={24} />
           </a>
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:sunilkarthik729@gmail.com"
             className="text-white hover:text-[#1DA1F2] transition-transform transform hover:scale-110"
           >
             <FaEnvelope size={24} />
           </a>
           <a
-            href="tel:+911234567890"
+            href="tel:9361124946"
             className="text-white hover:text-[#1DA1F2] transition-transform transform hover:scale-110"
           >
             <FaPhone size={24} />

@@ -5,7 +5,6 @@ import Header from "./Header";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
-import Contacts from "./Contact";
 import Footer from "./Footer";
 import Education from "./Education";
 import Certification from "./Certifications";
@@ -32,7 +31,6 @@ const HomePage: React.FC = () => {
         <Certification />
         <Skills />
         <Projects />
-        <Contacts />
         <Footer />
       </div>
     </ThemeProvider>
