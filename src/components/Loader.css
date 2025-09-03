@@ -1,0 +1,49 @@
+.loader-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem; /* Prevents text from touching edges */
+  box-sizing: border-box;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #1da1f2;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 2s ease-in-out, height 2s ease-in-out;
+  z-index: 1;
+}
+
+/* Expand enough to cover any screen size */
+.circle-expand {
+  width: 250vmax;
+  height: 250vmax;
+}
+
+.loader-text {
+  position: relative;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  /* Responsive font sizes */
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  line-height: 1.4;
+  max-width: 90%;
+}
+.loader-text.text-visible {
+  opacity: 1;
+}

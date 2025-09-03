@@ -1,0 +1,31 @@
+/* 3D perspective & backface */
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Tilt effect (optional: subtle on desktop) */
+.group:hover .tilt-card {
+  transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* Gradient border animation */
+.gradient-border {
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  background: linear-gradient(black, black) padding-box,
+    linear-gradient(45deg, #1DA1F2, #0d8ddb, #1DA1F2) border-box;
+  transition: all 0.5s ease-in-out;
+}
+.gradient-border:hover {
+  background: linear-gradient(black, black) padding-box,
+    linear-gradient(45deg, #0d8ddb, #1DA1F2, #0d8ddb) border-box;
+}
