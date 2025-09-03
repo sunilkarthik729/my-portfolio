@@ -9,7 +9,7 @@ const projects = [
       "A front-end E-commerce website built using React and TypeScript. Features include product listings, cart, and user-friendly design.",
     image: "/pretty-shoppe-Logo.svg",
     tech: ["React", "TypeScript"],
-    demoLink: "https://prettyshoppeofficial.netlify.app",   
+    demoLink: "https://prettyshoppeoffical.netlify.app",   
     githubLink: "https://github.com/sunilkarthik729/Pretty-shoppe-E-commerce", 
   },
   {
