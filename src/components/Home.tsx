@@ -8,6 +8,7 @@ import Projects from "./Projects";
 import Footer from "./Footer";
 import Education from "./Education";
 import Certification from "./Certifications";
+import Resume from "./Resume";
 
 const HomePage: React.FC = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -31,6 +32,7 @@ const HomePage: React.FC = () => {
         <Certification />
         <Skills />
         <Projects />
+        <Resume />
         <Footer />
       </div>
     </ThemeProvider>
